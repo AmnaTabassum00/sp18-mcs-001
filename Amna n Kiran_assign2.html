@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		class student{  
+			constructor(name,age,semester){//
+				this.name = name;
+				this.age = age;
+				this.semester = semester;
+
+				Object.defineProperty(this,'program',{
+					value: 'MCS' 
+				});
+				Object.defineProperty(this,'display',{
+					value:function(){
+						console.log("Name: ",this.name);
+						console.log("Age: ",this.age);
+						console.log("Semester: ",this.semester);
+						console.log("Program: ",this.program);
+						console.log("-----------------");
+					}
+				});
+			} 
+		} 
+		function findValue(stdArray) {
+			userValue = prompt("Enter Value");
+			for(i in stdArray){
+				for(ii in stdArray[i]){
+
+					if(userValue == stdArray[i][ii]){
+						console.log("Value found ",stdArray[i][ii]);
+						return;
+					}
+
+				}
+			}
+			console.log("Not Found");
+
+		}
+
+		std1 = new student("Sana",23,4); 
+		std2 = new student("Kirn",23,8); 
+		
+		std3 = new student("Hoor",23,4);
+
+		std1.display();
+		std2.display();
+		std3.display();
+		stdArray = new Array(std1,std2,std3);
+		
+		
+	    findValue(stdArray)
+	</script>
+</head>
+<body>
+
+</body>
+</html> 
